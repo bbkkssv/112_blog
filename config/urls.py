@@ -22,6 +22,7 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),  # include our accounts app URLs
-]
+    path('posts/', include('posts.urls')),
+]   
 
 # localhost:8000/accounts/login/  # login page
