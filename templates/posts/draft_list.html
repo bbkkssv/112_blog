@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Draft Posts{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Draft Posts</h1>
+    <hr>
+    {% if posts %}
+        <table class="table table-bordered table-hover">
+            <thead class="table-warning">
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.author }}</td>
+                    <td>{{ post.created_on|date:"M d, Y" }}</td>
+                    <td>
+                        <a href="{% url 'post_detail' post.pk %}" class="btn btn-warning btn-sm">View</a>
+                        <a href="{% url 'post_edit' post.pk %}" class="btn btn-primary btn-sm">Edit</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-warning">No draft posts found.</div>
+    {% endif %}
+    <a href="{% url 'posts' %}" class="btn btn-secondary btn-sm">&larr; All Posts</a>
+</div>
+{% endblock %}

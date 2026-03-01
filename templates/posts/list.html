@@ -1,13 +1,43 @@
 {% extends 'base.html' %}
 
-{% block title %}
-    Posts
-{% endblock %}
+{% block title %}Posts{% endblock %}
 
 {% block content %}
+<div class="container mt-4">
     <h1>Posts</h1>
-    {% for post in posts %}
-        <h4>{{ post.title }}</h4>
-        <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary btn-sm">Continue Reading</a>
-    {% endfor %}
+    <hr>
+    {% if posts %}
+        <table class="table table-bordered table-hover">
+            <thead class="table-primary">
+                <tr>
+                    <th>Title</th>
+                    <th>Sub Title</th>
+                    <th>Author</th>
+                    <th>Status</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.sub_title }}</td>
+                    <td>{{ post.author }}</td>
+                    <td>{{ post.status.name }}</td>
+                    <td>{{ post.created_on|date:"M d, Y" }}</td>
+                    <td>
+                        <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary btn-sm">View</a>
+                        <a href="{% url 'post_edit' post.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+                        <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-info">No posts yet. <a href="{% url 'post_new' %}">Create the first one!</a></div>
+    {% endif %}
+    <a href="{% url 'post_new' %}" class="btn btn-success btn-sm">+ New Post</a>
+</div>
 {% endblock %}

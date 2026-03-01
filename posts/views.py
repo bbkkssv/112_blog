@@ -9,10 +9,28 @@ class PostListView(ListView):
     context_object_name = 'posts'
 
 
+class PostDraftListView(ListView):
+    model = Post
+    template_name = 'posts/draft_list.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return Post.objects.filter(status__name__iexact='draft')
+
+
+class PostArchivedListView(ListView):
+    model = Post
+    template_name = 'posts/archived_list.html'
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return Post.objects.filter(status__name__iexact='archived')
+
+
 class PostCreateView(CreateView):
     model = Post
     template_name = 'posts/new.html'
-    fields = ['title', 'sub_title', 'body']
+    fields = ['title', 'sub_title', 'body', 'status']
 
     # Sets the author as the logged in user
     def form_valid(self, form):
@@ -29,7 +47,7 @@ class PostDetailView(DetailView):
 class PostUpdateView(UpdateView):
     model = Post
     template_name = 'posts/edit.html'
-    fields = ['title', 'sub_title', 'body']
+    fields = ['title', 'sub_title', 'body', 'status']
 
 
 class PostDeleteView(DeleteView):

@@ -1,23 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-    About
-{% endblock %}
-
-{% block css %}
-    <link rel="stylesheet" href="{% static 'css/about.css' %}">
-{% endblock %}
+{% block title %}About{% endblock %}
 
 {% block content %}
-    <h1 style="background-color: darksalmon; letter-spacing: 5px;">About Page using Jinja!</h1>
-    <div class="photos">
-        <img src="https://picsum.photos/600/300" alt="Picsum Random Photo">
-        <img src="{% static 'images/external-img.jpg' %}" alt="Internal Image">
+<div class="container mt-4">
+    <h1 class="mb-3">About</h1>
+    <hr>
+    <div class="row mb-4">
+        <div class="col-md-6 mb-3">
+            <img src="https://picsum.photos/600/300" alt="Picsum Random Photo" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6 mb-3">
+            <img src="{% static 'images/external-img.jpg' %}" alt="Internal Image" class="img-fluid rounded">
+        </div>
     </div>
-    <p class="custom-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente cum
-{% endblock %}
-
-{% block js %}
-    <script src="{% static 'js/about.js' %}"></script>
+    <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente cum
+    explicabo repellat error rem mollitia doloribus eos quidem fugit impedit.</p>
+</div>
 {% endblock %}
