@@ -11,6 +11,8 @@
         <span class="badge bg-info">Status: {{ post.status.name }}</span>
     <hr>
     <p><small>By {{ post.author }} | {{ post.created_on }}</small></p>
+    {% if user == post.author %}
     <a href="{% url 'post_edit' post.pk %}" class="btn btn-primary">Edit</a>
     <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Delete</a>
+    {% endif %}
 {% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}403 Forbidden{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <div class="card border-danger shadow-sm">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">403 - Forbidden</h4>
+                </div>
+                <div class="card-body py-4">
+                    <p class="fs-5 mb-3">You do not have permission to access this page.</p>
+                    <a href="{% url 'posts' %}" class="btn btn-danger">Go to Posts</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

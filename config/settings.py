@@ -128,3 +128,8 @@ LOGIN_REDIRECT_URL = '/'  # after login, redirect to home page
 # LOGOUT_REDIRECT_URL = '/'  # after logout, redirect to home page
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+### Email Backend Config ###
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+### SMTP - Simple Mail Transfer Protocol ###

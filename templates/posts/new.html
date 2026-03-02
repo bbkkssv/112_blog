@@ -10,10 +10,7 @@
     <form method="post">
         {% csrf_token %}
             {{ form|crispy }}
-            <div class="mb-3">
-                <label for="id_status" class="form-label">Status:</label>
-                <!-- {{ form.status }} -->
-            </div>
+           
         <input type="submit" value="Create Post" class="btn btn-primary">
     </form>
 {% endblock %}
