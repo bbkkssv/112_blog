@@ -5,14 +5,22 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
-    <h4>{{ post.sub_title }}</h4>
-    <p>{{ post.body }}</p>
-        <span class="badge bg-info">Status: {{ post.status.name }}</span>
-    <hr>
-    <p><small>By {{ post.author }} | {{ post.created_on }}</small></p>
-    {% if user == post.author %}
-    <a href="{% url 'post_edit' post.pk %}" class="btn btn-primary">Edit</a>
-    <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Delete</a>
-    {% endif %}
+<div class="card shadow-sm">
+    <div class="card-body p-4">
+        <h1 class="card-title">{{ post.title }}</h1>
+        <h5 class="card-subtitle text-muted mb-3">{{ post.sub_title }}</h5>
+        <hr>
+        <p class="card-text">{{ post.body }}</p>
+        <span class="badge bg-info text-dark">{{ post.status.name }}</span>
+        <hr>
+        <p class="text-muted mb-3"><small>By <strong>{{ post.author }}</strong> &mdash; {{ post.created_on|date:"M d, Y" }}</small></p>
+        <div class="d-flex gap-2">
+            {% if user == post.author %}
+            <a href="{% url 'post_edit' post.pk %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Delete</a>
+            {% endif %}
+            <a href="{% url 'posts' %}" class="btn btn-outline-secondary">&larr; Back to Posts</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

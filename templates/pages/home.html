@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    Home Page
+    Whispering Acres of Alabama
 {% endblock %}
 
 {% block css %}
@@ -10,9 +10,24 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="main-title">Home Page using Jinja tags!</h1>
-    <img src="{% static 'images/external-img.jpg' %}" alt="Static Image" class="hero-image">
-    <p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia fugiat, rerum consectetur</p>
+<div class="position-relative mb-5">
+    <img src="{% static 'images/sign.jpg' %}" alt="Whispering Acres of Alabama" class="w-100 rounded-3" style="max-height: 450px; object-fit: cover;">
+    <div class="position-absolute bottom-0 start-0 w-100 p-4 rounded-bottom-3 hero-overlay">
+        <h1 class="text-white fw-bold display-5" style="display:inline-block; background-color:rgba(0,0,0,0.65); padding:6px 18px; border-radius:6px; text-shadow:1px 1px 4px rgba(0,0,0,0.95);">Welcome to Whispering Acres of Alabama</h1>
+    </div>
+</div>
+<div class="row align-items-center mb-5 g-4">
+    <div class="col-md-6">
+        <h2 class="fw-semibold text-success">The Only Long-Term RV Park in Tallassee</h2>
+        <p class="lead" style="color: #4a6741;">Nestled in the heart of Tallassee, Alabama, Whispering Acres is a peaceful rural retreat
+        where nature, community, and Southern hospitality come together. Come experience the beauty
+        of wide open spaces and the warmth of Alabama living.</p>
+        <a href="{% url 'about' %}" class="btn btn-success">Learn More</a>
+    </div>
+    <div class="col-md-6">
+        <img src="{% static 'images/Large_pond.jpg' %}" alt="Large Pond at Whispering Acres" class="img-fluid rounded-3 shadow">
+    </div>
+</div>
 {% endblock %}
 
 {% block js %}

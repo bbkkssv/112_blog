@@ -1,21 +1,51 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}About{% endblock %}
+{% block title %}About — Whispering Acres of Alabama{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1 class="mb-3">About</h1>
-    <hr>
-    <div class="row mb-4">
-        <div class="col-md-6 mb-3">
-            <img src="https://picsum.photos/600/300" alt="Picsum Random Photo" class="img-fluid rounded">
+<div class="mt-2">
+    <h1 class="fw-bold" style="color: var(--wa-dark);">About Whispering Acres</h1>
+    <p class="lead" style="color: #4a6741;">Whispering Acres of Alabama offers a welcoming community with top-notch amenities,
+    including spacious RV sites, a fully equipped gym, on-site laundry, and storm shelters for your peace of mind.</p>
+    <hr class="mb-4">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="{% static 'images/rv-sites.jpg' %}" class="card-img-top" alt="RV Sites" style="height: 320px; object-fit: cover; object-position: center;">
+                <div class="card-body">
+                    <h5 class="card-title">RV Sites</h5>
+                    <p class="card-text text-muted">Spacious, well-maintained RV sites with full hookups in a serene setting.</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 mb-3">
-            <img src="{% static 'images/external-img.jpg' %}" alt="Internal Image" class="img-fluid rounded">
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="{% static 'images/Gym.jpg' %}" class="card-img-top" alt="Gym" style="height: 320px; object-fit: cover; object-position: center;">
+                <div class="card-body">
+                    <h5 class="card-title">Fitness &amp; Recreation</h5>
+                    <p class="card-text text-muted">Stay active in our fully equipped on-site gym, open to all residents.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="{% static 'images/Laundry.jpg' %}" class="card-img-top" alt="Laundry" style="height: 320px; object-fit: cover; object-position: center;">
+                <div class="card-body">
+                    <h5 class="card-title">Laundry Facilities</h5>
+                    <p class="card-text text-muted">Convenient on-site laundry facilities available for all guests and residents.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="{% static 'images/storm_shelters.jpg' %}" class="card-img-top" alt="Storm Shelters" style="height: 320px; object-fit: cover; object-position: center;">
+                <div class="card-body">
+                    <h5 class="card-title">Storm Shelters</h5>
+                    <p class="card-text text-muted">Your safety is our priority. Secure storm shelters are available on the property.</p>
+                </div>
+            </div>
         </div>
     </div>
-    <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente cum
-    explicabo repellat error rem mollitia doloribus eos quidem fugit impedit.</p>
 </div>
 {% endblock %}

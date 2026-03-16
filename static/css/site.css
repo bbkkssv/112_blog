@@ -1,0 +1,143 @@
+/* ================================================
+   Whispering Acres of Alabama — Brand Palette
+   ================================================
+   --wa-dark:  #243b24  deep forest green
+   --wa-green: #6cb846  lime green accent
+   ================================================ */
+
+:root {
+    --wa-dark: #243b24;
+    --wa-dark-hover: #1a2b1a;
+    --wa-green: #6cb846;
+    --wa-green-hover: #5aa038;
+    --wa-light: #f4f9f0;
+    --wa-border: #c5ddb5;
+}
+
+/* ---- Body ---- */
+body {
+    background-color: var(--wa-light);
+}
+
+/* ---- Navbar ---- */
+.navbar.bg-dark {
+    background-color: var(--wa-dark) !important;
+}
+
+/* ---- Footer ---- */
+footer.bg-dark {
+    background-color: var(--wa-dark) !important;
+}
+
+/* ---- Text ---- */
+.text-success {
+    color: var(--wa-green) !important;
+}
+
+/* ---- Links ---- */
+a:not(.btn):not(.nav-link):not(.navbar-brand) {
+    color: var(--wa-green);
+}
+a:not(.btn):not(.nav-link):not(.navbar-brand):hover {
+    color: var(--wa-green-hover);
+}
+
+/* ---- Buttons ---- */
+.btn-success {
+    background-color: var(--wa-green) !important;
+    border-color: var(--wa-green) !important;
+    color: #fff !important;
+}
+.btn-success:hover,
+.btn-success:focus {
+    background-color: var(--wa-green-hover) !important;
+    border-color: var(--wa-green-hover) !important;
+}
+
+.btn-dark {
+    background-color: var(--wa-dark) !important;
+    border-color: var(--wa-dark) !important;
+    color: #fff !important;
+}
+.btn-dark:hover,
+.btn-dark:focus {
+    background-color: var(--wa-dark-hover) !important;
+    border-color: var(--wa-dark-hover) !important;
+}
+
+.btn-primary {
+    background-color: var(--wa-dark) !important;
+    border-color: var(--wa-dark) !important;
+    color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--wa-dark-hover) !important;
+    border-color: var(--wa-dark-hover) !important;
+}
+
+.btn-outline-secondary {
+    color: #555 !important;
+    border-color: #aaa !important;
+}
+.btn-outline-secondary:hover {
+    background-color: #e8e8e8 !important;
+    color: #333 !important;
+}
+
+/* ---- Card headers ---- */
+.card-header.bg-dark,
+.card-header.bg-primary {
+    background-color: var(--wa-dark) !important;
+    border-color: var(--wa-dark) !important;
+}
+.card-header.bg-success {
+    background-color: var(--wa-green) !important;
+    border-color: var(--wa-green) !important;
+}
+.card-header.bg-danger {
+    background-color: #c0392b !important;
+    border-color: #c0392b !important;
+}
+
+/* ---- Cards ---- */
+.card {
+    border-color: var(--wa-border);
+}
+.card-title {
+    color: var(--wa-dark);
+    font-weight: 600;
+}
+
+/* ---- Table header ---- */
+.table-primary {
+    --bs-table-bg: var(--wa-dark);
+    --bs-table-color: #fff;
+    --bs-table-border-color: var(--wa-dark-hover);
+}
+.table-primary th {
+    color: #fff !important;
+}
+
+/* ---- Badge ---- */
+.text-bg-success {
+    background-color: var(--wa-green) !important;
+    color: #fff !important;
+}
+.badge.bg-info {
+    background-color: var(--wa-green) !important;
+    color: #fff !important;
+}
+
+/* ---- Alerts ---- */
+.alert-info {
+    background-color: #e8f5e0;
+    border-color: var(--wa-border);
+    color: var(--wa-dark);
+}
+
+/* ---- HR ---- */
+hr {
+    border-color: var(--wa-border);
+    opacity: 0.6;
+}
